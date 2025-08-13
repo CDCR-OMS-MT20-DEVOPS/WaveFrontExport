@@ -117,7 +117,7 @@ python wavefront-grafana-migrator.py \
 
 **Alert Group Configuration:**
 - `--alert-group-name`: Name for the alert rule group (default: "Wavefront Alerts")
-- `--alert-folder`: Folder name for alerts in Grafana (default: "Wavefront Migration")
+- `--alert-folder`: Folder name for alerts in Grafana (default: "Migrated Alerts")
 - `--alert-interval`: Evaluation interval for alerts (default: "60s")
 
 **Alert Deletion Options:**
@@ -197,7 +197,7 @@ python wavefront-grafana-migrator.py \
     --grafana-token your-grafana-token \
     --delete-alerts \
     --delete-by folder \
-    --delete-value "Wavefront Migration"
+    --delete-value "Migrated Alerts"
 ```
 
 #### Delete alerts matching a pattern:
@@ -492,7 +492,7 @@ The tool now supports modern Grafana alert structure with proper **Folders** and
 
 ### Alert Organization
 Migrated alerts are organized with:
-- **Folder**: Alerts are placed in a Grafana folder for organization (default: "Wavefront Migration")
+- **Folder**: Alerts are placed in a Grafana folder for organization (default: "Migrated Alerts")
 - **Rule Group**: Group name for alert evaluation (default: "Wavefront Alerts")
 - Each alert is posted individually with folder and group information embedded
 

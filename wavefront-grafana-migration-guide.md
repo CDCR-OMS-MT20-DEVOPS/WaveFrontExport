@@ -211,7 +211,7 @@ python wavefront-grafana-migrator.py \
   --grafana-token $GRAFANA_TOKEN \
   --delete-alerts \
   --delete-by folder \
-  --delete-value "Wavefront Migration"
+  --delete-value "Migrated Alerts"
 ```
 
 #### Delete Alerts Matching a Pattern
@@ -262,7 +262,7 @@ python wavefront-grafana-migrator.py \
 | `--skip-dashboards` | No | Skip dashboard migration |
 | `--skip-alerts` | No | Skip alert migration |
 | `--alert-group-name` | No | Name for the alert rule group (default: "Wavefront Alerts") |
-| `--alert-folder` | No | Folder name for alerts in Grafana (default: "Wavefront Migration") |
+| `--alert-folder` | No | Folder name for alerts in Grafana (default: "Migrated Alerts") |
 | `--alert-interval` | No | Evaluation interval for alerts (default: "60s") |
 
 #### Alert Deletion Arguments
@@ -428,7 +428,7 @@ def wql_to_elasticsearch(wql_query: str) -> Dict:
 Modern Grafana requires alerts to have **Folders** and **Rule Groups**. The migration tool automatically handles this:
 
 1. **Folders**: Alerts are organized in Grafana folders
-   - Configurable via `--alert-folder` (default: "Wavefront Migration")
+   - Configurable via `--alert-folder` (default: "Migrated Alerts")
    - Folders provide access control and organization
    - The tool automatically creates folders if they don't exist
    - Folder UID is obtained and embedded in each alert

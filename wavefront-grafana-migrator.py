@@ -1061,8 +1061,8 @@ class MigrationOrchestrator:
         if failed_dashboards:
             logger.warning(f"Failed dashboards: {', '.join(failed_dashboards)}")
     
-    def migrate_alerts(self, alert_ids: Optional[List[str]] = None, group_name: str = "Wavefront Alerts", 
-                      folder_name: str = "Wavefront Migration", evaluation_interval: str = "60s"):
+    def migrate_alerts(self, alert_ids: Optional[List[str]] = None, group_name: str = "Migrated Alerts", 
+                      folder_name: str = "Migrated Alerts", evaluation_interval: str = "60s"):
         """Migrate alerts from Wavefront to Grafana"""
         
         # Get alerts to migrate
@@ -1175,13 +1175,13 @@ def main():
     parser.add_argument('--skip-alerts', action='store_true', help='Skip alert migration')
     
     # Alert group configuration options
-    parser.add_argument('--alert-group-name', default='Wavefront Alerts', 
-                       help='Name for the alert rule group (default: Wavefront Alerts)')
-    parser.add_argument('--alert-folder', default='Wavefront Migration', 
-                       help='Folder name for alerts in Grafana (default: Wavefront Migration)')
+    parser.add_argument('--alert-group-name', default='Migrated Alerts', 
+                       help='Name for the alert rule group (default: Migrated Alerts)')
+    parser.add_argument('--alert-folder', default='Migrated Alerts', 
+                       help='Folder name for alerts in Grafana (default: Migrated Alerts)')
     parser.add_argument('--alert-interval', default='60s', 
                        help='Evaluation interval for alerts (default: 60s)')
-    
+
     args = parser.parse_args()
 
     # Parse Grafana authentication
