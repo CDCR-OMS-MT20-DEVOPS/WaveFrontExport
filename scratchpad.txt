@@ -1,5 +1,3 @@
-http://10.124.130.6/
-
 https://longboard.wavefront.com/api/v2/user
 
 {
@@ -65,7 +63,7 @@ python3 wavefront-grafana-migrator.py \
   --grafana-token $GRAFANA_TOKEN \
   --datasource-type prometheus \
   --datasource-uid $DATASOURCE_UID \
-  --dashboards "Kubernetes-Resources" \
+  --dashboards "cdcr-apps-status" \
   --skip-alerts
 
 ### Migrate ALL alerts from Wavefront to Grafana ###
