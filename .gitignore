@@ -148,4 +148,4 @@ cython_debug/
 
 # Migration output files
 dashboard_*.json
-alert_*.json
+alert_wf*.json
